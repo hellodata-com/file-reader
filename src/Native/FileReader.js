@@ -25,7 +25,7 @@ Elm.Native.FileReader.make = function(localRuntime){
             var reader = new FileReader();
 
             reader.onload = function(evt) {
-                return callback(Task.succeed(evt.target.result))
+                return callback(Task.succeed(btoa(evt.target.result)));
             };
 
             reader.onerror = function() {
